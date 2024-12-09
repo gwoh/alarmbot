@@ -1,0 +1,29 @@
+name: Smile Reminder
+
+on:
+  schedule: # UTC+9 기준 5시 실행
+    - cron:  "0 20 * * *"
+
+jobs:
+  message:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Discord Webhook Action
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+        content: "알리 출첵(PC) https://www.aliexpress.com/p/coin-pc-index/index.html"
+
+on:
+  schedule: # UTC+9 기준 3시 실행
+    - cron:  "0 3 * * *"
+
+jobs:
+  message:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Discord Webhook Action
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+        content: "알리 출첵(모바일)"
