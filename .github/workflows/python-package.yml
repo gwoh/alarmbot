@@ -11,7 +11,7 @@ jobs:
     - name: Discord Webhook Action
       uses: tsickert/discord-webhook@v5.3.0
       with:
-        webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+        webhook-url: ${{ secrets.WEBHOOK_URL }}
         content: "알리 출첵(PC) https://www.aliexpress.com/p/coin-pc-index/index.html"
 
 on:
